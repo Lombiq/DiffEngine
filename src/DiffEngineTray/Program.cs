@@ -83,6 +83,18 @@ static class Program
                 tracker.AcceptAll);
         }
 
+        var discardAllHotKey = settings.DiscardAllHotKey;
+        if (discardAllHotKey != null)
+        {
+            keyRegister.TryAddBinding(
+                KeyBindingIds.DiscardAll,
+                discardAllHotKey.Shift,
+                discardAllHotKey.Control,
+                discardAllHotKey.Alt,
+                discardAllHotKey.Key,
+                tracker.DiscardAll);
+        }
+
         var acceptOpenHotKey = settings.AcceptOpenHotKey;
         if (acceptOpenHotKey != null)
         {

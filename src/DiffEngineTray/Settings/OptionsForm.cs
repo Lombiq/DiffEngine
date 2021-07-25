@@ -22,6 +22,7 @@ public partial class OptionsForm :
     {
         this.trySave = trySave;
         acceptAllHotKey.HotKey = settings.AcceptAllHotKey;
+        discardAllHotKey.HotKey = settings.DiscardAllHotKey;
         acceptOpenHotKey.HotKey = settings.AcceptOpenHotKey;
         startupCheckBox.Checked = settings.RunAtStartup;
     }
@@ -32,6 +33,7 @@ public partial class OptionsForm :
         {
             RunAtStartup = startupCheckBox.Checked,
             AcceptAllHotKey = acceptAllHotKey.HotKey,
+            DiscardAllHotKey = discardAllHotKey.HotKey,
             AcceptOpenHotKey = acceptOpenHotKey.HotKey
         };
 

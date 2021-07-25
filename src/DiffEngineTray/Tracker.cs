@@ -196,6 +196,18 @@ class Tracker :
         }
     }
 
+    public void DiscardAll()
+    {
+        deletes.Clear();
+
+        foreach (var move in moves.Values)
+        {
+            InnerDiscard(move);
+        }
+
+        moves.Clear();
+    }
+
     public void Discard(TrackedMove move)
     {
         if (moves.Remove(move.Target, out var removed))
