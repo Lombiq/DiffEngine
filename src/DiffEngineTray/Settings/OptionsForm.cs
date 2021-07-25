@@ -37,7 +37,7 @@ public partial class OptionsForm :
             AcceptOpenHotKey = acceptOpenHotKey.HotKey
         };
 
-        var errors = (await trySave(settings)).ToList();
+        var errors = await trySave(settings);
         if (!errors.Any())
         {
             DialogResult = DialogResult.OK;
