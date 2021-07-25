@@ -29,7 +29,7 @@ public partial class OptionsForm :
 
     async void save_Click(object sender, EventArgs e)
     {
-        var newSettings = new Settings
+        var settings = new Settings
         {
             RunAtStartup = startupCheckBox.Checked,
             AcceptAllHotKey = acceptAllHotKey.HotKey,
@@ -37,7 +37,7 @@ public partial class OptionsForm :
             AcceptOpenHotKey = acceptOpenHotKey.HotKey
         };
 
-        var errors = (await trySave(newSettings)).ToList();
+        var errors = (await trySave(settings)).ToList();
         if (!errors.Any())
         {
             DialogResult = DialogResult.OK;
