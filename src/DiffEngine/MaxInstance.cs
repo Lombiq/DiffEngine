@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using DiffEngine;
 
 static class MaxInstance
 {
@@ -7,7 +8,7 @@ static class MaxInstance
 
     static int GetMaxInstances()
     {
-        var variable = EnvironmentEx.GetEnvironmentVariable("DiffEngine_MaxInstances");
+        var variable = EnvironmentEx.GetEnvironmentVariable(DiffEnvironmentKeys.MaxInstances);
         if (string.IsNullOrEmpty(variable))
         {
             return 5;
